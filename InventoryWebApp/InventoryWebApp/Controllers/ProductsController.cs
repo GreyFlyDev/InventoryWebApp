@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using InventoryWebApp.Models;
+using Microsoft.AspNet.Identity;
 
 namespace InventoryWebApp.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -17,7 +19,10 @@ namespace InventoryWebApp.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            return View(db.Products.ToList());
+            string currentUserId = User.Identity.GetUserId().ToString();
+            var products = db.Products.Where(p => p.UserId == currentUserId);
+
+            return View(products);
         }
 
         // GET: Products/Details/5
@@ -50,6 +55,9 @@ namespace InventoryWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                product.UserId = User.Identity.GetUserId();
+                product.Quantity = 0;
+
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -70,6 +78,10 @@ namespace InventoryWebApp.Controllers
             {
                 return HttpNotFound();
             }
+
+            TempData["UserId"] = product.UserId;
+            TempData["Quantity"] = product.Quantity;
+
             return View(product);
         }
 
@@ -80,6 +92,9 @@ namespace InventoryWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ProductId,ProductName,Quantity,Price,UserId")] Product product)
         {
+            product.Quantity = (decimal)TempData["Quantiy"];
+            product.UserId = (string)TempData["UserId"];
+
             if (ModelState.IsValid)
             {
                 db.Entry(product).State = EntityState.Modified;
