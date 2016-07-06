@@ -25,6 +25,10 @@ namespace InventoryWebApp.Models
         {
         }
 
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Sales> Sales { get; set; }
+        public DbSet<Restock> Restocks { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
