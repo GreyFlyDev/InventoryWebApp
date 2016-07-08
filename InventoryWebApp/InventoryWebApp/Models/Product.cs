@@ -12,6 +12,9 @@ namespace InventoryWebApp.Models
         public decimal Quantity { get; set; }
         public decimal Price { get; set; }
 
+        public ICollection<Restock> Restocks { get; set; }
+        public ICollection<Sales> Sales { get; set; }
+
         public string UserId { get; set; }
     }
 }

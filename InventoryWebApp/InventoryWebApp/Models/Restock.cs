@@ -7,11 +7,14 @@ namespace InventoryWebApp.Models
 {
     public class Restock
     {
+
         public int RestockId { get; set; }
         public int QuantityPurchased { get; set; }
         public decimal PurchasePrice { get; set; }
+        
+        public ICollection<Product> Products { get; set; }
 
-        public string UserId { get; set; }
         public int ProductId { get; set; }
+        public string UserId { get; set; }
     }
 }

@@ -67,3 +67,7 @@ C:\Users\Greg\Documents\InventoryWebApp\InventoryWebApp\InventoryWebApp\bin\Micr
 C:\Users\Greg\Documents\InventoryWebApp\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.csprojResolveAssemblyReference.cache
 C:\Users\Greg\Documents\InventoryWebApp\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.dll
 C:\Users\Greg\Documents\InventoryWebApp\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.pdb
+C:\Users\Greg\Documents\InventoryWebApp\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.Migrations.InitialCreate.resources
+C:\Users\Greg\Documents\InventoryWebApp\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.csproj.GenerateResource.Cache
+C:\Users\Greg\Documents\InventoryWebApp\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.Migrations.ChangedIdsToLists.resources
+C:\Users\Greg\Documents\InventoryWebApp\InventoryWebApp\InventoryWebApp\obj\Debug\InventoryWebApp.Migrations.ProductIdaswellAsProductList.resources
